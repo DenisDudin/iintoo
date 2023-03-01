@@ -4,71 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style/reset.css" rel="stylesheet">
+    <link href="/style/style.css" rel="stylesheet">
     <title>iintoo</title>
 </head>
 <body>
     <div class="container">
         <div class="registration-form">
             <div class="registration-form__left registration-img">
-
+                <div class="registration-img__logo-container">
+                    <img src="/img/logo.svg" alt="logo" class="registration-img__img">
+                </div>
             </div>
 
             <div class="registration-form__right sign-in">
-                <div class="sign-in__header">
+                <div class="sign-in__header header-form">
                     <h2>Get iintoo it today</h2>
                     <p>There is no charge or obligation upon registration</p>
                 </div>
 
-                <div class="sign-in__register-info register-info">
-                    <div class="register-info__wrapper">
-                        <button class="social-network social-network--facebook">Register with Facebook</button>
-                        <button class="social-network social-network--linkedln">Register with Linkedln</button>
-                    </div>
-
-                    <div class="register-info__separator separator">
-                        <span class="separator__text">or</span>
-                    </div>
-
-                    <div class="register-info__wrapper">
-                        <input class="register-input register-input--email">Register with Facebook</input>
-                        <input class="register-input register-input--phone">Register with Linkedln</input>
-                    </div>
+                <div class="sign-in__social-network wrapper">
+                    <button class="social-network social-network--facebook animation-btn">Register with Facebook</button>
+                    <button class="social-network social-network--linkedin animation-btn">Register with Linkedln</button>
                 </div>
 
-                <div class="registration-form__selection selection-radio">
-                    <div class="selection-radio__header">
-                        <h3 class="selection-radio__title">what type of investor are you?</h3>
-                        <p class="selection-radio__text">Select the type of investor you are below</p>
+                <div class="sign-in__separator separator">
+                    <span class="separator__text">or</span>
+                </div>
+
+                <form class="sign-in__form form-investor">
+                    <div class="form-investor__data data-input wrapper">
+                        <div class="data-input__input">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="data-input__input">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
                     </div>
 
-                    <div class="selection-radio__choice">
-                        <label>
-                            <input type="radio" name="option" value="Individual">Individual
-                        </label>
-                        <label>
-                            <input type="radio" name="option" value="Individual">Business
-                        </label>
-                        <label>
-                            <input type="radio" name="option" value="Individual">IRA
-                        </label>
-                        <label>
-                            <input type="radio" name="option" value="Individual">Trust
-                        </label>
+                    <div class="form-investor__question question-type">
+                        <h3 class="question-type__title">What type of investor are you?</h3>
+                        <p class="question-type__text">Select the type of investor you are below</p>
                     </div>
 
-                    <div class="selection-radio__info">
-                        <p class="selection-radio__info-text">
+                    <div class="form-investor__choice investor-choice wrapper">
+                      <label class="radio-btn">
+                        <input class="radio-btn__origin" type="radio" name="investor" value="Individual" required>
+                        <span class="radio-btn__custom"></span>
+                        Individual <span>&#9432;</span>
+                    </label>
+                    <label class="radio-btn">
+                        <input class="radio-btn__origin" type="radio" name="investor" value="Business" required>
+                        <span class="radio-btn__custom"></span>
+                        Business <span>&#9432;</span>
+                    </label>
+                    <label class="radio-btn">
+                        <input class="radio-btn__origin" type="radio" name="investor" value="IRA" required>
+                        <span class="radio-btn__custom"></span>
+                        IRA <span>&#9432;</span>
+                    </label>
+                    <label class="radio-btn">
+                        <input class="radio-btn__origin" type="radio" name="investor" value="Trust" required>
+                        <span class="radio-btn__custom"></span>
+                        Trust <span>&#9432;</span>
+                    </label>
+                    </div>
+
+                    <div class="form-investor__info-radio info-investor">
+                        <p>
                             I am a natural person investing on my own behalf as a sole owner, joint tenant, or tenant in common.
                         </p>
                     </div>
-                </div>
 
-                <div class="registration-form__agreement">
-                    <label>
-                        <input type="checkbox" name="terms" value="agree">
-                        I agree to the terms and receiving notifications from into <a href="#">View full terms</a>.
-                    </label>
-                </div>
+                    <div class="form-investor__agreement chk-agreement">
+                        <label>
+                            <input type="checkbox" name="agree" value="agree">
+                            I agree to the terms and receiving notifications from into <a href="#">View full terms</a>.
+                        </label>
+                    </div>
+           
+                    <button class="form-investor_submit btn-submit animation-btn" type="submit">Create Account</button>
+                  </form>
                 
             </div>
         </div>

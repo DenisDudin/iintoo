@@ -1,0 +1,330 @@
+@import 'variables.scss';
+
+
+@font-face {
+    font-family: "Barlow";
+    src: url("../fonts/Barlow-Reaular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: $background-color;
+    font-size: 14px;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 12px;
+    }
+}
+
+.registration-form {
+    margin: 100px auto;
+    display: flex;
+    width: 1000px;
+    max-width: 90%;
+    font-family: Barlow, Aria, sans-serif;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: 450px;
+        max-width: 95%;
+    }
+
+    &__left {
+        min-width: 52%;
+
+        @media screen and (max-width: 768px) {
+            min-height: 35cqw;
+        }
+        
+    }
+
+    &__rigth {
+        width: 48%;
+    }
+}
+
+.registration-img {
+    background: url('/img/bg.jpg') no-repeat;
+    background-size: cover;
+
+    @media screen and (max-width: 768px) {
+        background-position: center;
+    }
+
+    &__logo-container {
+        margin: 7% 0 0 8%;
+        position: relative;
+
+        img {
+            max-width:25%;
+            width: 90px;
+        }
+    }
+}
+
+.sign-in {
+    padding: 8% 4%;
+    background: $form-color;
+    color: $main-text-color;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-form {
+    margin-bottom: 10%;
+
+    h2 {
+        font-weight: 500;
+        margin-bottom: 3%;
+    }
+
+    p {
+        color: $additional-text-color;
+    }
+ }   
+
+.social-network {
+    position: relative;
+    padding: 3%;
+    width: 47%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    border: none;
+    color: $form-color;
+
+    &::before {
+        position: absolute;
+        left: 7px;
+        display: block;
+        width: 0.7rem;
+        height: 0.7rem;;
+        content: '';
+        background-position:center center;
+        background-repeat:no-repeat !important;
+        background-size: 90% 90% !important;
+    }
+
+    &--facebook {
+        background: $facebook-color;
+        &::before {
+            background: url('/img/facebook.svg');
+        }
+    }
+
+    &--linkedin {
+        background: $linkedin-color;
+        &::before {
+            background: url('/img/linkedin.svg');
+        }
+    }
+}
+
+.separator {
+    margin: 2cqw 0;
+    text-align: center;
+
+    &__text {
+        display: block;
+        position: relative;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 20%;
+            height: 0.5px;
+            background-color: $lightgray-color;
+        }
+
+        &:before {
+            right: 25%;
+            transform: translateY(-50%);
+        }
+
+        &:after {
+            left: 25%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.data-input {
+    margin-bottom: 15%;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 10%;
+    }
+    
+    div {
+        width: 47%;
+    }
+
+    &__input {
+        position: relative;
+    }
+
+    label {
+        position: absolute;
+        top: 3px;
+        left: 5px;
+        font-size: 0.8rem;
+        color: #999;
+        pointer-events: none;
+    }
+
+    input {
+        width: 100%;
+        padding: 20px 5px 3px;
+        font-size: 1rem;
+        color: $main-text-color;
+        border: none;
+        border: 1px solid $light-color;
+        outline: 0 !important;
+
+        &:focus, &:active {
+            border-left: 1px solid $element-color;
+        }
+    }
+}
+
+.question-type {
+    margin-bottom: 2cqw;
+
+    &__title {
+        margin-bottom: 1cqw;
+    }
+
+    &__text {
+        color: $additional-text-color;
+    }
+}
+
+.investor-choice {
+    margin-bottom: 1cqw;
+
+    span {
+        padding-top: 0.2rem;
+        display: block;
+        margin-left: 0.3cqw;
+        font-size: 0.5rem;
+
+        
+    }
+    
+}
+
+.radio-btn {
+    display: flex;
+    align-items: center;
+
+    &__origin:checked + &__custom::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+      
+    &__origin:focus + &__custom {
+        border: 3px solid $element-color;
+    }
+
+    &__origin {
+        margin: 0 0.4cqw;
+        width: 0;
+        height: 0;
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    &__custom {
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: #ffffff;
+        border: 2px solid $light-color;
+        border-radius: 50%;
+        vertical-align: text-top;
+        margin-right: 5px;
+
+        &:before {
+            position: absolute;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            left: 50%;
+            top: 50%;
+            content: "";
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);  
+            transition: 0.2s ease-in;
+        }
+    }
+}
+
+.info-investor {
+    margin-bottom: 2cqw;
+
+    p {
+        padding: 10px;
+        width: 50%;
+        color: $additional-text-color;
+        font-size: 0.6rem;
+        font-weight: 300;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(33,33,33,0.1);
+    }
+}
+
+.chk-agreement {
+    margin-bottom: 2.5cqw;
+    color: $additional-text-color;
+    font-weight: 300;
+    font-size: 0.6rem;
+
+    input {
+        border-color: $additional-text-color;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+    }
+
+    a {
+        margin-left: 3px;
+        color: $element-color;
+    }
+}
+
+.btn-submit {
+    padding: 0.8cqw 4cqw;
+    background: $element-color;
+    color: $light-color;
+    border: none;
+    font-size: 0.8rem;
+    border-radius: 3px;
+
+    @media screen and (max-width: 768px) {
+        padding: 0.6rem 10%;
+    }
+}
+
+.animation-btn {
+    &:hover {
+        box-shadow: 0 0 5px $element-color;
+        transition: box-shadow 0.2s ease-in;
+    }
+
+    &:active {
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    }
+}
